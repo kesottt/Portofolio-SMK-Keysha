@@ -1,32 +1,102 @@
-/* 🌸 Umum */
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+/* Reset & Body */
+* {
   margin: 0;
   padding: 0;
-  background-color: #fffafc; /* putih gading */
-  color: #333;
-  background-image: linear-gradient(
-    90deg, rgba(255,182,193,0.15) 50%, transparent 50%
-  ), linear-gradient(
-    rgba(255,182,193,0.15) 50%, transparent 50%
-  );
-  background-size: 40px 40px; /* pixel kotak */
+  box-sizing: border-box;
 }
 
-/* 🌸 Navbar */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffe6f2; /* Pink cerah dasar */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Tambahkan pixel art background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(255,192,203,0.3) 1px, transparent 1px),
+    linear-gradient(rgba(255,192,203,0.3) 1px, transparent 1px);
+  background-size: 20px 20px; /* ukuran pixel kotak */
+  z-index: -2;
+}
+
+/* Efek awan */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: moveClouds 60s linear infinite;
+  z-index: -1;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.cloud1 {
+  width: 120px;
+  height: 60px;
+  top: 50px;
+  left: -150px;
+}
+
+.cloud1::before {
+  width: 80px; height: 80px;
+  top: -20px; left: 10px;
+}
+
+.cloud1::after {
+  width: 60px; height: 60px;
+  top: -10px; left: 60px;
+}
+
+.cloud2 {
+  width: 150px;
+  height: 70px;
+  top: 200px;
+  left: -200px;
+  animation-duration: 80s;
+}
+
+.cloud2::before {
+  width: 100px; height: 100px;
+  top: -30px; left: 20px;
+}
+
+.cloud2::after {
+  width: 70px; height: 70px;
+  top: -10px; left: 80px;
+}
+
+@keyframes moveClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+/* Navbar */
 nav {
-  background: #ff69b4; /* pink cerah */
-  padding: 12px;
+  background: #ff66b2; /* pink cerah solid */
+  padding: 1rem;
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 nav ul li {
@@ -38,84 +108,59 @@ nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  color: #ffe4f0; /* pink muda */
+  color: #ffe6f2;
 }
 
-/* 🌸 Header */
+/* Header */
 header {
   text-align: center;
-  padding: 80px 20px;
-  background: #ffe6f1;
-  color: #ff2e88;
-  border-bottom: 4px solid #ff69b4;
+  padding: 4rem 2rem;
+  background: #ff99cc; /* pink lebih soft */
+  color: white;
 }
 
 header h1 {
-  font-size: 2.8em;
-  margin-bottom: 15px;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 header p {
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
-/* 🌸 Section */
+/* Section */
 section {
-  padding: 50px 20px;
-  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
 }
 
 section h2 {
-  color: #ff2e88;
+  text-align: center;
   margin-bottom: 20px;
-  font-size: 2em;
-  border-bottom: 2px dashed #ff69b4;
-  display: inline-block;
-  padding-bottom: 5px;
+  color: #ff3399;
 }
 
-/* 🌸 Tentang Saya - Foto dengan efek pixel coquette */
-#about {
-  position: relative;
-}
-
-#about img {
+section img {
   display: block;
-  margin: 20px auto;
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 4px solid #ff69b4;
-  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.4);
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 200px;
+  border-radius: 50%;
+  margin: 15px auto;
+  border: 4px solid #ff66b2;
 }
 
-#about img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 20px rgba(255, 105, 180, 0.6);
+/* Footer */
+footer {
+  background: #ff66b2;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
-
-/* 🌸 Efek pixel overlay di foto */
-#about::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 220px;
-  background-image: linear-gradient(
-    90deg, rgba(255,105,180,0.2) 50%, transparent 50%
-  ), linear-gradient(
-    rgba(255,105,180,0.2) 50%, transparent 50%
-  );
-  background-size: 20px 20px;
-  border-r
