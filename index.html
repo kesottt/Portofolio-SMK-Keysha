@@ -14,12 +14,49 @@
       padding: 0;
       background-color: #fffafc; /* putih gading */
       color: #333;
-      background-image: linear-gradient(
-        90deg, rgba(255,182,193,0.15) 50%, transparent 50%
-      ), linear-gradient(
-        rgba(255,182,193,0.15) 50%, transparent 50%
-      );
+      background-image: 
+        linear-gradient(90deg, rgba(255,182,193,0.15) 50%, transparent 50%),
+        linear-gradient(rgba(255,182,193,0.15) 50%, transparent 50%);
       background-size: 40px 40px; /* pixel kotak */
+      overflow-x: hidden;
+    }
+
+    /* 🌸 Efek awan */
+    .cloud {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: moveClouds 60s linear infinite;
+      z-index: -1;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .cloud1 {
+      width: 120px; height: 60px;
+      top: 60px; left: -150px;
+    }
+    .cloud1::before { width: 80px; height: 80px; top: -20px; left: 10px; }
+    .cloud1::after { width: 60px; height: 60px; top: -10px; left: 60px; }
+
+    .cloud2 {
+      width: 160px; height: 70px;
+      top: 200px; left: -200px;
+      animation-duration: 80s;
+    }
+    .cloud2::before { width: 100px; height: 100px; top: -30px; left: 20px; }
+    .cloud2::after { width: 70px; height: 70px; top: -10px; left: 90px; }
+
+    @keyframes moveClouds {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120vw); }
     }
 
     /* 🌸 Navbar */
@@ -31,28 +68,15 @@
       top: 0;
       z-index: 1000;
     }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
-
+    nav ul { list-style: none; padding: 0; margin: 0; }
+    nav ul li { display: inline; margin: 0 15px; }
     nav ul li a {
       text-decoration: none;
       color: white;
       font-weight: bold;
       transition: color 0.3s;
     }
-
-    nav ul li a:hover {
-      color: #ffe4f0; /* pink muda */
-    }
+    nav ul li a:hover { color: #ffe4f0; }
 
     /* 🌸 Header */
     header {
@@ -62,23 +86,20 @@
       color: #ff2e88;
       border-bottom: 4px solid #ff69b4;
     }
-
     header h1 {
       font-size: 2.8em;
       margin-bottom: 15px;
       font-family: 'Trebuchet MS', sans-serif;
     }
-
-    header p {
-      font-size: 1.2em;
-    }
+    header p { font-size: 1.2em; }
 
     /* 🌸 Section */
     section {
       padding: 50px 20px;
       text-align: center;
+      max-width: 900px;
+      margin: auto;
     }
-
     section h2 {
       color: #ff2e88;
       margin-bottom: 20px;
@@ -88,54 +109,39 @@
       padding-bottom: 5px;
     }
 
-    /* 🌸 Tentang Saya - Foto dengan efek pixel coquette */
-    #about {
-      position: relative;
-    }
-
+    /* 🌸 Tentang Saya */
+    #about { position: relative; }
     #about img {
       display: block;
       margin: 20px auto;
-      width: 220px;
-      height: 220px;
+      width: 220px; height: 220px;
       object-fit: cover;
       border-radius: 12px;
       border: 4px solid #ff69b4;
       box-shadow: 0 6px 12px rgba(255, 105, 180, 0.4);
-      position: relative;
-      z-index: 1;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1;
+      position: relative;
     }
-
     #about img:hover {
       transform: scale(1.05);
       box-shadow: 0 12px 20px rgba(255, 105, 180, 0.6);
     }
-
-    /* 🌸 Efek pixel overlay di foto */
     #about::after {
       content: "";
       position: absolute;
-      top: 30px;
-      left: 50%;
+      top: 30px; left: 50%;
       transform: translateX(-50%);
-      width: 220px;
-      height: 220px;
-      background-image: linear-gradient(
-        90deg, rgba(255,105,180,0.2) 50%, transparent 50%
-      ), linear-gradient(
-        rgba(255,105,180,0.2) 50%, transparent 50%
-      );
+      width: 220px; height: 220px;
+      background-image: 
+        linear-gradient(90deg, rgba(255,105,180,0.2) 50%, transparent 50%),
+        linear-gradient(rgba(255,105,180,0.2) 50%, transparent 50%);
       background-size: 20px 20px;
       border-radius: 12px;
       z-index: 0;
       pointer-events: none;
     }
-
-    /* 🌸 Sentuhan coquette */
-    #about h2::after {
-      content: " 🌸";
-    }
+    #about h2::after { content: " 🌸"; }
 
     /* 🌸 Kontak */
     #contact a {
@@ -143,10 +149,7 @@
       font-weight: bold;
       text-decoration: none;
     }
-
-    #contact a:hover {
-      text-decoration: underline;
-    }
+    #contact a:hover { text-decoration: underline; }
 
     /* 🌸 Footer */
     footer {
@@ -209,6 +212,10 @@
   <footer data-aos="fade-up">
     <p>&copy; 2025 Portofolio Keysha Nadya Mecca</p>
   </footer>
+
+  <!-- Awan -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
 
   <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
