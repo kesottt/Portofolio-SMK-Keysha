@@ -3,123 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Keysha Nadya Mecca</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- AOS animasi -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>Welcome to My Pixel World</title>
+  <!-- Font Pixel -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Background pixel aesthetic */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: repeating-linear-gradient(
+        45deg,
+        #ffb6eb,
+        #ffb6eb 20px,
+        #ff8edb 20px,
+        #ff8edb 40px
+      );
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      color: white;
+      text-shadow: 2px 2px #ff2fa0;
+    }
+
+    header p {
+      font-size: 12px;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: #ff4fb3;
+      border: 3px solid #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 4px 4px #b3006f;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* Efek awan pixel */
+    .cloud {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.9;
+      animation: float 30s linear infinite;
+    }
+
+    .cloud1 { width: 100px; height: 60px; top: 50px; left: -150px; animation-delay: 0s; }
+    .cloud2 { width: 120px; height: 70px; top: 180px; left: -200px; animation-delay: 10s; }
+    .cloud3 { width: 90px; height: 50px; top: 300px; left: -180px; animation-delay: 20s; }
+
+    @keyframes float {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120vw); }
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#kompetensi">Kompetensi</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-  </nav>
-
-  <!-- Header -->
-  <header data-aos="fade-down">
-    <h1>Keysha Nadya Mecca</h1>
-    <p>SMK Plus Pelita Nusantara | Teknik Komputer Jaringan</p>
-  </header>
-
-  <!-- Tentang Saya -->
-  <section id="about" data-aos="fade-right">
-    <h2>Tentang Saya</h2>
-    <img src="foto.jpg" alt="Foto Keysha">
-    <p>
-      Halo! Saya <b>Keysha Nadya Mecca</b>, siswi SMK Plus Pelita Nusantara 
-      jurusan <b>Teknik Komputer Jaringan</b>.  
-      Saya memiliki minat dalam bidang jaringan komputer, teknologi, 
-      serta pembuatan website.
-    </p>
-  </section>
-
-  <!-- Kompetensi -->
-  <section id="kompetensi" data-aos="fade-up">
-    <h2>Kompetensi</h2>
-    <div class="tabs">
-      <button class="tab-link active" onclick="openTab(event, 'mikrotik')">Mikrotik</button>
-      <button class="tab-link" onclick="openTab(event, 'fiber')">Fiber Optik</button>
-      <button class="tab-link" onclick="openTab(event, 'elektronika')">Elektronika</button>
-      <button class="tab-link" onclick="openTab(event, 'server')">Server</button>
-    </div>
-
-    <div id="mikrotik" class="tab-content active">
-      <h3>Konfigurasi Mikrotik</h3>
-      <p>Pengalaman konfigurasi router Mikrotik, setup hotspot, VLAN, firewall, dan manajemen bandwidth.</p>
-      <div class="gallery">
-        <img src="mikrotik1.jpg" alt="Mikrotik 1">
-        <img src="mikrotik2.jpg" alt="Mikrotik 2">
-        <img src="mikrotik3.jpg" alt="Mikrotik 3">
-      </div>
-    </div>
-
-    <div id="fiber" class="tab-content">
-      <h3>Instalasi Fiber Optik</h3>
-      <p>Pengalaman splicing kabel fiber optik, pengukuran loss jaringan dengan OTDR, dan instalasi FTTH.</p>
-      <div class="gallery">
-        <img src="fiber1.jpg" alt="Fiber 1">
-        <img src="fiber2.jpg" alt="Fiber 2">
-      </div>
-    </div>
-
-    <div id="elektronika" class="tab-content">
-      <h3>Elektronika Dasar</h3>
-      <p>Memahami rangkaian sederhana, soldering, perawatan hardware, dan troubleshooting.</p>
-      <div class="gallery">
-        <img src="elektronika1.jpg" alt="Elektronika 1">
-      </div>
-    </div>
-
-    <div id="server" class="tab-content">
-      <h3>Manajemen Server</h3>
-      <p>Pengalaman instalasi server Linux & Windows, web server, dan manajemen user & jaringan.</p>
-      <div class="gallery">
-        <img src="server1.jpg" alt="Server 1">
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontak -->
-  <section id="contact" data-aos="zoom-in">
-    <h2>Kontak</h2>
-    <p>Email: <a href="mailto:keyshanadyamecca85@gmail.com">keyshanadyamecca85@gmail.com</a></p>
-    <p>Nomor HP: <a href="https://wa.me/628986419663" target="_blank">0898-6419-663</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer data-aos="fade-up">
-    <p>&copy; 2025 Portofolio Keysha Nadya Mecca</p>
-  </footer>
-
-  <!-- Awan -->
+  <!-- Awan animasi -->
   <div class="cloud cloud1"></div>
   <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
 
-  <!-- Script -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+  <!-- Judul -->
+  <header>
+    <h1>🌸 Welcome to My Pixel World 🌸</h1>
+    <p>Tampilan pink cerah, pixel aesthetic, dan awan melayang~</p>
+  </header>
 
-    function openTab(evt, tabName) {
-      let contents = document.getElementsByClassName("tab-content");
-      for (let i = 0; i < contents.length; i++) {
-        contents[i].style.display = "none";
-        contents[i].classList.remove("active");
-      }
-      let links = document.getElementsByClassName("tab-link");
-      for (let i = 0; i < links.length; i++) {
-        links[i].classList.remove("active");
-      }
-      document.getElementById(tabName).style.display = "block";
-      document.getElementById(tabName).classList.add("active");
-      evt.currentTarget.classList.add("active");
-    }
-  </script>
+  <!-- Konten -->
+  <div class="content">
+    <div class="card">
+      ✨ <b>Tentang Website Ini</b><br><br>
+      Website ini menggunakan efek Pixel pink cerah dengan animasi awan agar tampil lebih manis dan unik.  
+      Desain ini cocok untuk portfolio, personal web, atau project kreatif lainnya.
+    </div>
+
+    <div class="card">
+      💖 <b>Konten Utama</b><br><br>
+      Kamu bisa menambahkan foto, teks, atau bahkan embed video di sini.  
+      Semua bisa disesuaikan agar sesuai dengan tema pixel aesthetic.
+    </div>
+  </div>
 </body>
 </html>
