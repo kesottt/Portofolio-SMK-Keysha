@@ -1,6 +1,4 @@
-/* ========== STYLE PORTOFOLIO ========== */
-
-/* Font dan Reset */
+/* Reset & Font */
 * {
   margin: 0;
   padding: 0;
@@ -9,30 +7,29 @@
 }
 
 body {
-  background: linear-gradient(to right, #f9e3f0, #e0f3ff);
+  background: #fffaf0; /* putih gading */
   color: #333;
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #ff5db1, #ff9966);
+  background: linear-gradient(135deg, #ff4da6, #ff80bf);
   color: white;
   text-align: center;
-  padding: 50px 20px;
-  position: relative;
-  overflow: hidden;
+  padding: 60px 20px;
+  border-radius: 0 0 50px 50px;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   animation: fadeDown 1.2s ease;
 }
 
 header p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: 10px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 /* Animasi header */
@@ -45,29 +42,31 @@ header p {
 section {
   max-width: 1000px;
   margin: 30px auto;
-  padding: 25px;
+  padding: 30px;
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.2);
   transition: transform 0.3s;
 }
 
 section:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 section h2 {
-  color: #ff5db1;
+  color: #ff4da6;
   margin-bottom: 15px;
-  border-left: 5px solid #ff9966;
-  padding-left: 10px;
+  border-left: 6px solid #ff80bf;
+  padding-left: 12px;
 }
 
 /* Foto */
 img {
-  max-width: 200px;
+  max-width: 180px;
   border-radius: 50%;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  display: block;
+  margin: 15px auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   transition: transform 0.3s;
 }
 
@@ -75,31 +74,25 @@ img:hover {
   transform: scale(1.05);
 }
 
-/* Tombol */
-button, a.btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff5db1, #ff9966);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
+/* Link */
+a {
+  color: #ff4da6;
   text-decoration: none;
-  transition: all 0.3s;
-  margin-top: 15px;
+  font-weight: bold;
 }
 
-button:hover, a.btn:hover {
-  background: linear-gradient(135deg, #ff9966, #ff5db1);
-  transform: scale(1.05);
+a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
-  background: #343a40;
+  background: #ff4da6;
   color: white;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  border-radius: 20px 20px 0 0;
+  border-radius: 30px 30px 0 0;
 }
 
 /* Responsif */
@@ -112,6 +105,6 @@ footer {
     padding: 20px;
   }
   img {
-    max-width: 150px;
+    max-width: 140px;
   }
 }
