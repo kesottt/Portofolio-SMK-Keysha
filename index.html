@@ -3,227 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Keysha Nadya Mecca</title>
-  <!-- AOS animasi -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>Pixel Pink Website</title>
   <style>
-    /* 🌸 Umum */
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+    /* Reset dasar */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #fffafc; /* putih gading */
-      color: #333;
-      background-image: 
-        linear-gradient(90deg, rgba(255,182,193,0.15) 50%, transparent 50%),
-        linear-gradient(rgba(255,182,193,0.15) 50%, transparent 50%);
-      background-size: 40px 40px; /* pixel kotak */
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background: #ffb6f9;
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* 🌸 Efek awan */
+    /* Background pixelated */
+    .pixel-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(45deg, #ff4bcf 25%, transparent 25%),
+        linear-gradient(-45deg, #ff4bcf 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ff4bcf 75%),
+        linear-gradient(-45deg, transparent 75%, #ff4bcf 75%);
+      background-size: 40px 40px;
+      opacity: 0.25;
+      z-index: -2;
+    }
+
+    /* Awan */
     .cloud {
       position: absolute;
-      background: #fff;
+      background: white;
       border-radius: 50%;
-      opacity: 0.7;
+      width: 80px; height: 50px;
+      top: 50px;
+      opacity: 0.8;
       animation: moveClouds 60s linear infinite;
-      z-index: -1;
     }
-
-    .cloud::before,
-    .cloud::after {
+    .cloud::before, .cloud::after {
       content: '';
       position: absolute;
-      background: #fff;
+      background: white;
       border-radius: 50%;
     }
-
-    .cloud1 {
-      width: 120px; height: 60px;
-      top: 60px; left: -150px;
+    .cloud::before {
+      width: 50px; height: 50px;
+      left: -30px; top: -10px;
     }
-    .cloud1::before { width: 80px; height: 80px; top: -20px; left: 10px; }
-    .cloud1::after { width: 60px; height: 60px; top: -10px; left: 60px; }
-
-    .cloud2 {
-      width: 160px; height: 70px;
-      top: 200px; left: -200px;
-      animation-duration: 80s;
+    .cloud::after {
+      width: 60px; height: 60px;
+      left: 40px; top: -20px;
     }
-    .cloud2::before { width: 100px; height: 100px; top: -30px; left: 20px; }
-    .cloud2::after { width: 70px; height: 70px; top: -10px; left: 90px; }
 
+    /* Awan animasi */
     @keyframes moveClouds {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(120vw); }
+      from { transform: translateX(-200px); }
+      to { transform: translateX(120vw); }
     }
 
-    /* 🌸 Navbar */
-    nav {
-      background: #ff69b4; /* pink cerah */
-      padding: 12px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav ul { list-style: none; padding: 0; margin: 0; }
-    nav ul li { display: inline; margin: 0 15px; }
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover { color: #ffe4f0; }
-
-    /* 🌸 Header */
     header {
-      text-align: center;
-      padding: 80px 20px;
-      background: #ffe6f1;
-      color: #ff2e88;
-      border-bottom: 4px solid #ff69b4;
-    }
-    header h1 {
-      font-size: 2.8em;
-      margin-bottom: 15px;
-      font-family: 'Trebuchet MS', sans-serif;
-    }
-    header p { font-size: 1.2em; }
-
-    /* 🌸 Section */
-    section {
       padding: 50px 20px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
-    section h2 {
-      color: #ff2e88;
-      margin-bottom: 20px;
-      font-size: 2em;
-      border-bottom: 2px dashed #ff69b4;
-      display: inline-block;
-      padding-bottom: 5px;
     }
 
-    /* 🌸 Tentang Saya */
-    #about { position: relative; }
-    #about img {
-      display: block;
+    header h1 {
+      font-size: 28px;
+      text-shadow: 3px 3px #d6009a;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #ffe6f9;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #ff6fd3;
+      border: 3px solid #fff;
+      padding: 20px;
       margin: 20px auto;
-      width: 220px; height: 220px;
-      object-fit: cover;
+      max-width: 500px;
       border-radius: 12px;
-      border: 4px solid #ff69b4;
-      box-shadow: 0 6px 12px rgba(255, 105, 180, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      z-index: 1;
-      position: relative;
+      box-shadow: 5px 5px #d6009a;
     }
-    #about img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 20px rgba(255, 105, 180, 0.6);
-    }
-    #about::after {
-      content: "";
-      position: absolute;
-      top: 30px; left: 50%;
-      transform: translateX(-50%);
-      width: 220px; height: 220px;
-      background-image: 
-        linear-gradient(90deg, rgba(255,105,180,0.2) 50%, transparent 50%),
-        linear-gradient(rgba(255,105,180,0.2) 50%, transparent 50%);
-      background-size: 20px 20px;
-      border-radius: 12px;
-      z-index: 0;
-      pointer-events: none;
-    }
-    #about h2::after { content: " 🌸"; }
 
-    /* 🌸 Kontak */
-    #contact a {
-      color: #ff2e88;
-      font-weight: bold;
-      text-decoration: none;
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
     }
-    #contact a:hover { text-decoration: underline; }
 
-    /* 🌸 Footer */
+    .card p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
     footer {
-      background: #ff69b4;
+      margin-top: 40px;
+      padding: 20px;
+      background: #ff4bcf;
       color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-      border-top: 3px solid #ff2e88;
+      font-size: 12px;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#pkl">PKL</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-  </nav>
-
-  <!-- Header -->
-  <header data-aos="fade-down">
-    <h1>Keysha Nadya Mecca</h1>
-    <p>SMK Plus Pelita Nusantara | Teknik Komputer Jaringan</p>
-  </header>
-
-  <!-- Tentang Saya -->
-  <section id="about" data-aos="fade-right">
-    <h2>Tentang Saya</h2>
-    <img src="foto.jpg" alt="Foto Keysha">
-    <p>
-      Halo! Saya <b>Keysha Nadya Mecca</b>, siswi SMK Plus Pelita Nusantara 
-      jurusan <b>Teknik Komputer Jaringan</b>.  
-      Saya memiliki minat dalam bidang jaringan komputer, teknologi, 
-      serta pembuatan website.
-    </p>
-  </section>
-
-  <!-- Pengalaman PKL -->
-  <section id="pkl" data-aos="fade-left">
-    <h2>Pengalaman PKL</h2>
-    <p>
-      Selama Praktik Kerja Lapangan (PKL), saya mendapatkan pengalaman 
-      dalam mengelola jaringan komputer, melakukan perawatan perangkat 
-      keras, dan membantu instalasi jaringan LAN.  
-      Saya juga berlatih komunikasi profesional dengan tim dan klien.
-    </p>
-  </section>
-
-  <!-- Kontak -->
-  <section id="contact" data-aos="zoom-in">
-    <h2>Kontak</h2>
-    <p>Email: <a href="mailto:keyshanadyamecca85@gmail.com">keyshanadyamecca85@gmail.com</a></p>
-    <p>Nomor HP: <a href="https://wa.me/628986419663" target="_blank">0898-6419-663</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer data-aos="fade-up">
-    <p>&copy; 2025 Portofolio Keysha Nadya Mecca</p>
-  </footer>
+  <!-- Background pixel -->
+  <div class="pixel-bg"></div>
 
   <!-- Awan -->
-  <div class="cloud cloud1"></div>
-  <div class="cloud cloud2"></div>
+  <div class="cloud" style="top: 60px; animation-delay: 0s;"></div>
+  <div class="cloud" style="top: 120px; animation-delay: 15s;"></div>
+  <div class="cloud" style="top: 200px; animation-delay: 30s;"></div>
 
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
+  <header>
+    <h1>🌸 Welcome to My Pixel World 🌸</h1>
+    <p>Tampilan pink cerah, pixel aesthetic, dan awan melayang~</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>✨ Tentang Website Ini</h2>
+      <p>
+        Website ini menggunakan efek pixel pink cerah dengan animasi awan
+        agar tampil lebih manis dan unik. Desain ini cocok untuk portfolio,
+        personal web, atau project kreatif lainnya.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>💖 Konten Utama</h2>
+      <p>
+        Kamu bisa menambahkan foto, teks, atau bahkan embed video di sini.
+        Semua bisa disesuaikan agar sesuai dengan tema pixel aesthetic.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    Dibuat dengan 💖 dan pixel art
+  </footer>
 </body>
 </html>
