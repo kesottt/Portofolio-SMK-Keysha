@@ -4,15 +4,161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Keysha Nadya Mecca</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- AOS (Animation On Scroll) -->
+  <!-- AOS animasi -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    /* 🌸 Umum */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffafc; /* putih gading */
+      color: #333;
+      background-image: linear-gradient(
+        90deg, rgba(255,182,193,0.15) 50%, transparent 50%
+      ), linear-gradient(
+        rgba(255,182,193,0.15) 50%, transparent 50%
+      );
+      background-size: 40px 40px; /* pixel kotak */
+    }
+
+    /* 🌸 Navbar */
+    nav {
+      background: #ff69b4; /* pink cerah */
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffe4f0; /* pink muda */
+    }
+
+    /* 🌸 Header */
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: #ffe6f1;
+      color: #ff2e88;
+      border-bottom: 4px solid #ff69b4;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    /* 🌸 Section */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #ff2e88;
+      margin-bottom: 20px;
+      font-size: 2em;
+      border-bottom: 2px dashed #ff69b4;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* 🌸 Tentang Saya - Foto dengan efek pixel coquette */
+    #about {
+      position: relative;
+    }
+
+    #about img {
+      display: block;
+      margin: 20px auto;
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 4px solid #ff69b4;
+      box-shadow: 0 6px 12px rgba(255, 105, 180, 0.4);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #about img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(255, 105, 180, 0.6);
+    }
+
+    /* 🌸 Efek pixel overlay di foto */
+    #about::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 220px;
+      background-image: linear-gradient(
+        90deg, rgba(255,105,180,0.2) 50%, transparent 50%
+      ), linear-gradient(
+        rgba(255,105,180,0.2) 50%, transparent 50%
+      );
+      background-size: 20px 20px;
+      border-radius: 12px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* 🌸 Sentuhan coquette */
+    #about h2::after {
+      content: " 🌸";
+    }
+
+    /* 🌸 Kontak */
+    #contact a {
+      color: #ff2e88;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* 🌸 Footer */
+    footer {
+      background: #ff69b4;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      border-top: 3px solid #ff2e88;
+    }
+  </style>
 </head>
-<!-- Hiasan Icon -->
-<div class="floating-icon" style="top:10%; left:15%;">✨</div>
-<div class="floating-icon" style="top:30%; left:70%;">❤️</div>
-<div class="floating-icon" style="top:60%; left:40%;">🫧</div>
-<div class="floating-icon" style="top:80%; left:20%;">🌸</div>
 <body>
   <!-- Navbar -->
   <nav>
@@ -74,4 +220,3 @@
   </script>
 </body>
 </html>
-
