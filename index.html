@@ -12,150 +12,142 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Press Start 2P", cursive, monospace; /* Font pixel retro */
+      background: #ffe6f2;
       color: #333;
       overflow-x: hidden;
       position: relative;
       min-height: 100vh;
     }
 
-    /* Pixel grid dasar */
-    body::before {
-      content: "";
+    /* Pixel Background ala Mario Bros */
+    .pixel-bg {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       background-image:
-        linear-gradient(90deg, rgba(255, 20, 147, 0.8) 1px, transparent 1px),
-        linear-gradient(rgba(255, 20, 147, 0.8) 1px, transparent 1px);
-      background-size: 15px 15px;
+        linear-gradient(0deg, #ff69b4 25%, transparent 25%, transparent 75%, #ff69b4 75%, #ff69b4),
+        linear-gradient(90deg, #ff69b4 25%, transparent 25%, transparent 75%, #ff69b4 75%, #ff69b4);
+      background-size: 40px 40px; /* ukuran blok pixel */
       z-index: -3;
     }
 
-    /* Overlay blink pixel */
+    /* Tambahan blok random putih kayak aksen pixel */
     .pixel-overlay {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-image: radial-gradient(circle, rgba(255,20,147,0.8) 30%, transparent 31%);
-      background-size: 15px 15px;
-      mix-blend-mode: lighten;
-      animation: blink 2s infinite steps(2, start);
+      background-image:
+        radial-gradient(circle, #fff 15%, transparent 16%),
+        radial-gradient(circle, #fff 15%, transparent 16%);
+      background-size: 80px 80px;
+      background-position: 0 0, 40px 40px;
+      opacity: 0.5;
       z-index: -2;
     }
 
-    @keyframes blink {
-      0%   { opacity: 0.2; }
-      50%  { opacity: 1; }
-      100% { opacity: 0.2; }
-    }
-
-    /* Gradient dasar */
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, #ff9ce3, #ff6ec7);
-      opacity: 0.6;
-      z-index: -4;
-    }
-
-    /* Awan */
+    /* Awan retro putih */
     .cloud {
       position: absolute;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
+      background: #fff;
+      border: 3px solid #ff1493;
+      border-radius: 0; /* biar kotak (pixelated) */
+      width: 60px; height: 30px;
+      image-rendering: pixelated;
       animation: moveClouds 60s linear infinite;
       z-index: -1;
     }
 
-    .cloud1 { width: 120px; height: 120px; top: 50px; left: -150px; animation-duration: 100s; }
-    .cloud2 { width: 200px; height: 200px; top: 150px; left: -250px; animation-duration: 120s; }
-    .cloud3 { width: 100px; height: 100px; top: 250px; left: -180px; animation-duration: 80s; }
-    .cloud4 { width: 160px; height: 160px; top: 350px; left: -220px; animation-duration: 140s; }
-    .cloud5 { width: 140px; height: 140px; top: 100px; left: -200px; animation-duration: 90s; }
+    .cloud1 { top: 50px; left: -80px; width: 80px; height: 40px; animation-duration: 80s; }
+    .cloud2 { top: 150px; left: -120px; width: 100px; height: 50px; animation-duration: 100s; }
+    .cloud3 { top: 250px; left: -100px; width: 70px; height: 35px; animation-duration: 90s; }
 
     @keyframes moveClouds {
       0% { transform: translateX(0); }
       100% { transform: translateX(120vw); }
     }
 
+    /* Header */
     header {
       text-align: center;
-      padding: 100px 20px 50px;
+      padding: 80px 20px 40px;
+      background: #ff99cc;
       color: white;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      border-bottom: 4px solid #ff1493;
     }
 
     header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+      font-size: 2.2em;
+      margin-bottom: 15px;
     }
 
     header p {
-      font-size: 1.2em;
+      font-size: 0.9em;
     }
 
+    /* Main Card */
     main {
-      padding: 50px 20px;
+      padding: 40px 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: auto;
     }
 
     .card {
-      background: rgba(255,255,255,0.9);
-      border-radius: 15px;
+      background: #fff;
+      border: 4px solid #ff1493;
       padding: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+      border-radius: 0; /* biar kotak pixel */
+      box-shadow: 5px 5px 0px #ff69b4;
+      transition: transform 0.2s;
     }
 
     .card:hover {
-      transform: translateY(-10px);
+      transform: translate(-5px, -5px);
+      box-shadow: 10px 10px 0px #ff1493;
     }
 
     .card h2 {
       color: #ff1493;
       margin-bottom: 10px;
+      font-size: 1em;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: rgba(255,255,255,0.9);
-      margin-top: 50px;
+      padding: 15px;
+      background: #ff66b2;
+      border-top: 4px solid #ff1493;
+      color: white;
     }
   </style>
+  <!-- Font Pixel Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Efek pixel blink -->
+  <div class="pixel-bg"></div>
   <div class="pixel-overlay"></div>
 
-  <!-- Awan -->
+  <!-- Awan retro -->
   <div class="cloud cloud1"></div>
   <div class="cloud cloud2"></div>
   <div class="cloud cloud3"></div>
-  <div class="cloud cloud4"></div>
-  <div class="cloud cloud5"></div>
 
   <header>
-    <h1>Portofolio Saya</h1>
-    <p>Selamat datang di dunia kreatif saya</p>
+    <h1>PORTOFOLIO SAYA</h1>
+    <p>✨ Selamat datang di dunia pixel saya ✨</p>
   </header>
 
   <main>
     <div class="card">
       <h2>Tentang Saya</h2>
-      <p>Saya adalah seorang yang suka belajar desain dan teknologi.</p>
+      <p>Saya suka dunia retro pixel dan desain kreatif.</p>
     </div>
     <div class="card">
       <h2>Proyek</h2>
-      <p>Beberapa karya saya meliputi desain web, grafis, dan animasi.</p>
+      <p>Beberapa karya saya berupa web retro, grafis, dan animasi pixel.</p>
     </div>
     <div class="card">
       <h2>Kontak</h2>
@@ -164,7 +156,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Portofolio Saya</p>
+    <p>&copy; 2025 Portofolio Pixel Saya</p>
   </footer>
 </body>
 </html>
