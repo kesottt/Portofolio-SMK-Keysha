@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Keysha Nadya Mecca</title>
   <link rel="stylesheet" href="style.css">
+  <!-- AOS (Animation On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navbar -->
@@ -17,13 +19,13 @@
   </nav>
 
   <!-- Header -->
-  <header>
+  <header data-aos="fade-down">
     <h1>Keysha Nadya Mecca</h1>
     <p>SMK Plus Pelita Nusantara | Teknik Komputer Jaringan</p>
   </header>
 
   <!-- Tentang Saya -->
-  <section id="about">
+  <section id="about" data-aos="fade-right">
     <h2>Tentang Saya</h2>
     <img src="foto.jpg" alt="Foto Keysha">
     <p>
@@ -35,7 +37,7 @@
   </section>
 
   <!-- Pengalaman PKL -->
-  <section id="pkl">
+  <section id="pkl" data-aos="fade-left">
     <h2>Pengalaman PKL</h2>
     <p>
       Selama Praktik Kerja Lapangan (PKL), saya mendapatkan pengalaman 
@@ -46,15 +48,24 @@
   </section>
 
   <!-- Kontak -->
-  <section id="contact">
+  <section id="contact" data-aos="zoom-in">
     <h2>Kontak</h2>
     <p>Email: <a href="mailto:keyshanadyamecca85@gmail.com">keyshanadyamecca85@gmail.com</a></p>
     <p>Nomor HP: <a href="https://wa.me/628986419663" target="_blank">0898-6419-663</a></p>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer data-aos="fade-up">
     <p>&copy; 2025 Portofolio Keysha Nadya Mecca</p>
   </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
