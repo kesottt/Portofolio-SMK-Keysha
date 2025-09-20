@@ -46,7 +46,7 @@ nav ul li a:hover {
 
 /* Header */
 header {
-  background: #ff4da6;
+  background: #ff4da6; /* pink cerah polos */
   color: white;
   text-align: center;
   padding: 60px 20px;
@@ -55,7 +55,6 @@ header {
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  animation: fadeIn 1.2s ease;
 }
 
 header p {
@@ -97,7 +96,7 @@ img {
 }
 
 img:hover {
-  transform: scale(1.05) rotate(2deg);
+  transform: scale(1.05);
 }
 
 /* Link */
@@ -114,7 +113,7 @@ a:hover {
 
 /* Footer */
 footer {
-  background: #ff4da6;
+  background: #ff4da6; /* pink cerah */
   color: white;
   text-align: center;
   padding: 20px;
