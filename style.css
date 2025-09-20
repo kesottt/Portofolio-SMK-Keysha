@@ -89,3 +89,29 @@ body::before {
   z-index: -1;
   animation: float 6s ease-in-out infinite;
 }
+/* ===== Hiasan Icon Background ===== */
+.floating-icon {
+  position: fixed;
+  font-size: 1.5rem;
+  color: #ff4da6;
+  opacity: 0.7;
+  animation: floatIcon 8s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50px) rotate(20deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+}
+
+
