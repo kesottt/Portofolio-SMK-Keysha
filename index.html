@@ -4,107 +4,155 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Saya</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Pixel grid background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image:
+        linear-gradient(90deg, rgba(255, 20, 147, 0.8) 1px, transparent 1px),
+        linear-gradient(rgba(255, 20, 147, 0.8) 1px, transparent 1px);
+      background-size: 15px 15px;
+      z-index: -3;
+    }
+
+    /* Gradient dasar */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #ff9ce3, #ff6ec7);
+      opacity: 0.6;
+      z-index: -4;
+    }
+
+    /* Awan */
+    .cloud {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: moveClouds 60s linear infinite;
+      z-index: -2;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .cloud1 { width: 120px; height: 120px; top: 50px; left: -150px; animation-duration: 100s; }
+    .cloud2 { width: 200px; height: 200px; top: 150px; left: -250px; animation-duration: 120s; }
+    .cloud3 { width: 100px; height: 100px; top: 250px; left: -180px; animation-duration: 80s; }
+    .cloud4 { width: 160px; height: 160px; top: 350px; left: -220px; animation-duration: 140s; }
+    .cloud5 { width: 140px; height: 140px; top: 100px; left: -200px; animation-duration: 90s; }
+
+    @keyframes moveClouds {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120vw); }
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 50px;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    main {
+      padding: 50px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h2 {
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Efek awan -->
+  <!-- Awan -->
   <div class="cloud cloud1"></div>
   <div class="cloud cloud2"></div>
   <div class="cloud cloud3"></div>
   <div class="cloud cloud4"></div>
   <div class="cloud cloud5"></div>
 
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#about">Tentang Saya</a></li>
-      <li><a href="#portfolio">Portofolio</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-  </nav>
-
-  <!-- Header -->
   <header>
-    <h1>Hai, Saya Keysha</h1>
-    <p>Web Developer | IoT Enthusiast | Creative Designer</p>
+    <h1>Portofolio Saya</h1>
+    <p>Selamat datang di dunia kreatif saya</p>
   </header>
 
-  <!-- Tentang Saya -->
-  <section id="about">
-    <h2>Tentang Saya</h2>
-    <img src="profile.jpg" alt="Foto Saya">
-    <p>
-      Halo! Saya seorang developer yang suka membuat proyek berbasis web dan IoT.
-      Saya berpengalaman dengan <b>ESP32, RFID, dan Web Development</b>. 
-      Senang membuat tampilan web yang interaktif, ceria, dan penuh warna.
-    </p>
-  </section>
-
-  <!-- Portofolio -->
-  <section id="portfolio">
-    <h2>Portofolio</h2>
-
-    <div class="tabs">
-      <button class="tab-link active" onclick="openTab(event, 'web')">Web</button>
-      <button class="tab-link" onclick="openTab(event, 'iot')">IoT</button>
-      <button class="tab-link" onclick="openTab(event, 'design')">Design</button>
+  <main>
+    <div class="card">
+      <h2>Tentang Saya</h2>
+      <p>Saya adalah seorang yang suka belajar desain dan teknologi.</p>
     </div>
-
-    <div id="web" class="tab-content active">
-      <h3>Proyek Web</h3>
-      <div class="gallery">
-        <img src="web1.jpg" alt="Web Project 1">
-        <img src="web2.jpg" alt="Web Project 2">
-        <img src="web3.jpg" alt="Web Project 3">
-      </div>
+    <div class="card">
+      <h2>Proyek</h2>
+      <p>Beberapa karya saya meliputi desain web, grafis, dan animasi.</p>
     </div>
-
-    <div id="iot" class="tab-content">
-      <h3>Proyek IoT</h3>
-      <div class="gallery">
-        <img src="iot1.jpg" alt="IoT Project 1">
-        <img src="iot2.jpg" alt="IoT Project 2">
-      </div>
+    <div class="card">
+      <h2>Kontak</h2>
+      <p>Email: contoh@email.com<br>Instagram: @username</p>
     </div>
+  </main>
 
-    <div id="design" class="tab-content">
-      <h3>Proyek Desain</h3>
-      <div class="gallery">
-        <img src="design1.jpg" alt="Design Project 1">
-        <img src="design2.jpg" alt="Design Project 2">
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontak -->
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>Email: <a href="mailto:keysha@email.com">keysha@email.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/">@username</a></p>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Keysha. All Rights Reserved.</p>
+    <p>&copy; 2025 Portofolio Saya</p>
   </footer>
-
-  <script>
-    // Tab interaktif
-    function openTab(evt, tabName) {
-      let i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tab-link");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-  </script>
-
 </body>
 </html>
