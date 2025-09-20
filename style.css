@@ -1,4 +1,4 @@
-/* Reset & Font */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,51 +12,68 @@ body {
   line-height: 1.6;
 }
 
+/* Navbar */
+nav {
+  background: #ff4da6; /* pink cerah */
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #fffaf0; /* ivory */
+}
+
 /* Header */
 header {
-  background: linear-gradient(135deg, #ff4da6, #ff80bf);
+  background: #ff4da6;
   color: white;
   text-align: center;
   padding: 60px 20px;
-  border-radius: 0 0 50px 50px;
 }
 
 header h1 {
-  font-size: 2.8rem;
-  animation: fadeDown 1.2s ease;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 header p {
-  font-size: 1.2rem;
-  margin-top: 10px;
+  font-size: 1.1rem;
   opacity: 0.95;
-}
-
-/* Animasi header */
-@keyframes fadeDown {
-  from { transform: translateY(-40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
 }
 
 /* Section */
 section {
-  max-width: 1000px;
-  margin: 30px auto;
+  max-width: 900px;
+  margin: 40px auto;
   padding: 30px;
   background: white;
-  border-radius: 20px;
-  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.2);
-  transition: transform 0.3s;
-}
-
-section:hover {
-  transform: translateY(-6px);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 section h2 {
   color: #ff4da6;
-  margin-bottom: 15px;
-  border-left: 6px solid #ff80bf;
+  margin-bottom: 20px;
+  border-left: 6px solid #ff4da6;
   padding-left: 12px;
 }
 
@@ -66,19 +83,13 @@ img {
   border-radius: 50%;
   display: block;
   margin: 15px auto;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-
-img:hover {
-  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Link */
 a {
   color: #ff4da6;
   text-decoration: none;
-  font-weight: bold;
 }
 
 a:hover {
@@ -92,19 +103,4 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  border-radius: 30px 30px 0 0;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  section {
-    margin: 15px;
-    padding: 20px;
-  }
-  img {
-    max-width: 140px;
-  }
 }
