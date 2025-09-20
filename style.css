@@ -1,42 +1,117 @@
+/* ========== STYLE PORTOFOLIO ========== */
+
+/* Font dan Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(to right, #f9e3f0, #e0f3ff);
+  color: #333;
+  line-height: 1.6;
 }
 
-.hero {
-  background: #007bff;
+/* Header */
+header {
+  background: linear-gradient(135deg, #ff5db1, #ff9966);
   color: white;
-  padding: 80px 0;
   text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero h1 {
-  font-size: 2.8em;
-  margin-bottom: 20px;
+header h1 {
+  font-size: 2.5rem;
+  animation: fadeDown 1.2s ease;
 }
 
-.hero p {
-  font-size: 1.2em;
+header p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  opacity: 0.9;
 }
 
-.section-title {
-  color: #007bff;
-  margin-bottom: 40px;
+/* Animasi header */
+@keyframes fadeDown {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-img.hover-scale {
-  transition: transform 0.3s ease;
+/* Section */
+section {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
-img.hover-scale:hover {
+section:hover {
+  transform: translateY(-5px);
+}
+
+section h2 {
+  color: #ff5db1;
+  margin-bottom: 15px;
+  border-left: 5px solid #ff9966;
+  padding-left: 10px;
+}
+
+/* Foto */
+img {
+  max-width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+img:hover {
   transform: scale(1.05);
 }
 
-.navbar {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* Tombol */
+button, a.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff5db1, #ff9966);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 15px;
 }
 
+button:hover, a.btn:hover {
+  background: linear-gradient(135deg, #ff9966, #ff5db1);
+  transform: scale(1.05);
+}
+
+/* Footer */
 footer {
   background: #343a40;
   color: white;
-  padding: 20px 0;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  section {
+    margin: 15px;
+    padding: 20px;
+  }
+  img {
+    max-width: 150px;
+  }
 }
