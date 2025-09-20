@@ -24,7 +24,7 @@ body::before {
     linear-gradient(90deg, rgba(255,192,203,0.3) 1px, transparent 1px),
     linear-gradient(rgba(255,192,203,0.3) 1px, transparent 1px);
   background-size: 20px 20px; /* ukuran pixel kotak */
-  z-index: -2;
+  z-index: -3; /* paling bawah */
 }
 
 /* Efek awan */
@@ -34,7 +34,7 @@ body::before {
   border-radius: 50%;
   opacity: 0.8;
   animation: moveClouds 60s linear infinite;
-  z-index: -1;
+  z-index: -2; /* di atas pixel, di bawah konten */
 }
 .cloud::before,
 .cloud::after {
@@ -68,6 +68,46 @@ body::before {
   width: 70px; height: 70px;
   top: -10px; left: 80px;
 }
+.cloud3 {
+  width: 100px; height: 50px;
+  top: 300px; left: -180px;
+  animation-duration: 70s;
+}
+.cloud3::before {
+  width: 70px; height: 70px;
+  top: -20px; left: 15px;
+}
+.cloud3::after {
+  width: 50px; height: 50px;
+  top: -10px; left: 55px;
+}
+.cloud4 {
+  width: 180px; height: 90px;
+  top: 120px; left: -250px;
+  animation-duration: 90s;
+}
+.cloud4::before {
+  width: 120px; height: 120px;
+  top: -35px; left: 25px;
+}
+.cloud4::after {
+  width: 90px; height: 90px;
+  top: -15px; left: 95px;
+}
+.cloud5 {
+  width: 140px; height: 70px;
+  top: 400px; left: -200px;
+  animation-duration: 100s;
+}
+.cloud5::before {
+  width: 90px; height: 90px;
+  top: -25px; left: 20px;
+}
+.cloud5::after {
+  width: 70px; height: 70px;
+  top: -15px; left: 80px;
+}
+
 @keyframes moveClouds {
   0% { transform: translateX(0); }
   100% { transform: translateX(120vw); }
@@ -193,45 +233,4 @@ footer {
   text-align: center;
   padding: 1rem;
   border-top: 3px solid #ff2e88;
-}
-.cloud3 {
-  width: 100px; height: 50px;
-  top: 300px; left: -180px;
-  animation-duration: 70s;
-}
-.cloud3::before {
-  width: 70px; height: 70px;
-  top: -20px; left: 15px;
-}
-.cloud3::after {
-  width: 50px; height: 50px;
-  top: -10px; left: 55px;
-}
-
-.cloud4 {
-  width: 180px; height: 90px;
-  top: 120px; left: -250px;
-  animation-duration: 90s;
-}
-.cloud4::before {
-  width: 120px; height: 120px;
-  top: -35px; left: 25px;
-}
-.cloud4::after {
-  width: 90px; height: 90px;
-  top: -15px; left: 95px;
-}
-
-.cloud5 {
-  width: 140px; height: 70px;
-  top: 400px; left: -200px;
-  animation-duration: 100s;
-}
-.cloud5::before {
-  width: 90px; height: 90px;
-  top: -25px; left: 20px;
-}
-.cloud5::after {
-  width: 70px; height: 70px;
-  top: -15px; left: 80px;
 }
