@@ -1,98 +1,236 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Saya</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Efek Awan -->
-  <div class="cloud cloud1"></div>
-  <div class="cloud cloud2"></div>
-  <div class="cloud cloud3"></div>
-  <div class="cloud cloud4"></div>
-  <div class="cloud cloud5"></div>
+/* Reset & Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#about">Tentang Saya</a></li>
-      <li><a href="#portfolio">Portofolio</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-  </nav>
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffe6f2; /* Pink cerah dasar */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
 
-  <!-- Header -->
-  <header>
-    <h1>Portofolio Saya</h1>
-    <p>Selamat datang di halaman pribadi saya 🌸</p>
-  </header>
+/* Pixel background lebih jelas */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 105, 180, 0.6) 1px, transparent 1px),
+    linear-gradient(rgba(255, 105, 180, 0.6) 1px, transparent 1px);
+  background-size: 15px 15px; /* ukuran pixel lebih rapat */
+  z-index: -3;
+}
 
-  <!-- Tentang Saya -->
-  <section id="about">
-    <h2>Tentang Saya</h2>
-    <img src="foto-profil.jpg" alt="Foto Saya">
-    <p>Halo, saya seorang kreator yang suka dengan desain dan teknologi. Saya senang membuat proyek menarik dengan sentuhan warna cerah dan efek visual yang unik ✨.</p>
-  </section>
+/* Efek awan */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.85;
+  animation: moveClouds 60s linear infinite;
+  z-index: -2;
+}
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+.cloud1 {
+  width: 120px; height: 60px;
+  top: 50px; left: -150px;
+}
+.cloud1::before {
+  width: 80px; height: 80px;
+  top: -20px; left: 10px;
+}
+.cloud1::after {
+  width: 60px; height: 60px;
+  top: -10px; left: 60px;
+}
+.cloud2 {
+  width: 150px; height: 70px;
+  top: 200px; left: -200px;
+  animation-duration: 80s;
+}
+.cloud2::before {
+  width: 100px; height: 100px;
+  top: -30px; left: 20px;
+}
+.cloud2::after {
+  width: 70px; height: 70px;
+  top: -10px; left: 80px;
+}
+.cloud3 {
+  width: 100px; height: 50px;
+  top: 300px; left: -180px;
+  animation-duration: 70s;
+}
+.cloud3::before {
+  width: 70px; height: 70px;
+  top: -20px; left: 15px;
+}
+.cloud3::after {
+  width: 50px; height: 50px;
+  top: -10px; left: 55px;
+}
+.cloud4 {
+  width: 180px; height: 90px;
+  top: 120px; left: -250px;
+  animation-duration: 90s;
+}
+.cloud4::before {
+  width: 120px; height: 120px;
+  top: -35px; left: 25px;
+}
+.cloud4::after {
+  width: 90px; height: 90px;
+  top: -15px; left: 95px;
+}
+.cloud5 {
+  width: 140px; height: 70px;
+  top: 400px; left: -200px;
+  animation-duration: 100s;
+}
+.cloud5::before {
+  width: 90px; height: 90px;
+  top: -25px; left: 20px;
+}
+.cloud5::after {
+  width: 70px; height: 70px;
+  top: -15px; left: 80px;
+}
 
-  <!-- Portofolio -->
-  <section id="portfolio">
-    <h2>Portofolio</h2>
-    <div class="tabs">
-      <button class="tab-link active" onclick="openTab(event, 'web')">Web</button>
-      <button class="tab-link" onclick="openTab(event, 'design')">Desain</button>
-      <button class="tab-link" onclick="openTab(event, 'lainnya')">Lainnya</button>
-    </div>
-    <div id="web" class="tab-content active">
-      <h3>Proyek Web</h3>
-      <div class="gallery">
-        <img src="web1.jpg" alt="Proyek Web 1">
-        <img src="web2.jpg" alt="Proyek Web 2">
-      </div>
-    </div>
-    <div id="design" class="tab-content">
-      <h3>Proyek Desain</h3>
-      <div class="gallery">
-        <img src="design1.jpg" alt="Desain 1">
-        <img src="design2.jpg" alt="Desain 2">
-      </div>
-    </div>
-    <div id="lainnya" class="tab-content">
-      <h3>Proyek Lainnya</h3>
-      <div class="gallery">
-        <img src="lain1.jpg" alt="Lainnya 1">
-        <img src="lain2.jpg" alt="Lainnya 2">
-      </div>
-    </div>
-  </section>
+@keyframes moveClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
 
-  <!-- Kontak -->
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>Hubungi saya di <a href="mailto:email@example.com">email@example.com</a> atau kunjungi <a href="https://instagram.com/">Instagram saya</a>.</p>
-  </section>
+/* Navbar */
+nav {
+  background: #ff66b2; /* pink cerah solid */
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav ul { list-style: none; }
+nav ul li { display: inline; margin: 0 15px; }
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+nav ul li a:hover { color: #ffe6f2; }
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Portofolio Saya. Dibuat dengan ❤️</p>
-  </footer>
+/* Header */
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #ff99cc;
+  color: white;
+}
+header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+header p { font-size: 1.2rem; }
 
-  <!-- Script Tabs -->
-  <script>
-    function openTab(evt, tabName) {
-      let i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tab-link");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-  </script>
-</body>
-</html>
+/* Section */
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff3399;
+}
+section img {
+  display: block;
+  max-width: 200px;
+  border-radius: 50%;
+  margin: 15px auto;
+  border: 4px solid #ff66b2;
+}
+
+/* Tabs */
+.tabs {
+  margin: 20px 0;
+  text-align: center;
+}
+.tab-link {
+  background: #ffe6f1;
+  border: 2px solid #ff69b4;
+  color: #ff2e88;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.tab-link:hover {
+  background: #ff69b4;
+  color: white;
+}
+.tab-link.active {
+  background: #ff69b4;
+  color: white;
+}
+.tab-content {
+  display: none;
+  margin-top: 20px;
+}
+.tab-content.active { display: block; }
+.tab-content h3 {
+  color: #ff2e88;
+  margin-bottom: 10px;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.gallery img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(255, 105, 180, 0.6);
+}
+
+/* Kontak */
+#contact a {
+  color: #ff2e88;
+  font-weight: bold;
+  text-decoration: none;
+}
+#contact a:hover { text-decoration: underline; }
+
+/* Footer */
+footer {
+  background: #ff66b2;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-top: 3px solid #ff2e88;
+}
