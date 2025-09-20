@@ -3,154 +3,326 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixel Pink Website</title>
+  <title>Portofolio Keysha Nadya Mecca</title>
+  <!-- AOS animasi -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    /* Reset dasar */
-    * {
+    /* 🌸 Umum */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Press Start 2P', cursive;
-      background: #ffb6f9;
-      color: #fff;
-      text-align: center;
-      min-height: 100vh;
+      background-color: #fffafc; /* putih gading */
+      color: #333;
+      background-image: 
+        linear-gradient(90deg, rgba(255,182,193,0.15) 50%, transparent 50%),
+        linear-gradient(rgba(255,182,193,0.15) 50%, transparent 50%);
+      background-size: 40px 40px; /* pixel kotak */
       overflow-x: hidden;
     }
 
-    /* Background pixelated */
-    .pixel-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image: 
-        linear-gradient(45deg, #ff4bcf 25%, transparent 25%),
-        linear-gradient(-45deg, #ff4bcf 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #ff4bcf 75%),
-        linear-gradient(-45deg, transparent 75%, #ff4bcf 75%);
-      background-size: 40px 40px;
-      opacity: 0.25;
-      z-index: -2;
-    }
-
-    /* Awan */
+    /* 🌸 Efek awan */
     .cloud {
       position: absolute;
-      background: white;
+      background: #fff;
       border-radius: 50%;
-      width: 80px; height: 50px;
-      top: 50px;
-      opacity: 0.8;
+      opacity: 0.7;
       animation: moveClouds 60s linear infinite;
+      z-index: -1;
     }
-    .cloud::before, .cloud::after {
+    .cloud::before,
+    .cloud::after {
       content: '';
       position: absolute;
-      background: white;
+      background: #fff;
       border-radius: 50%;
     }
-    .cloud::before {
-      width: 50px; height: 50px;
-      left: -30px; top: -10px;
+    .cloud1 {
+      width: 120px; height: 60px;
+      top: 60px; left: -150px;
     }
-    .cloud::after {
-      width: 60px; height: 60px;
-      left: 40px; top: -20px;
+    .cloud1::before { width: 80px; height: 80px; top: -20px; left: 10px; }
+    .cloud1::after { width: 60px; height: 60px; top: -10px; left: 60px; }
+    .cloud2 {
+      width: 160px; height: 70px;
+      top: 200px; left: -200px;
+      animation-duration: 80s;
     }
-
-    /* Awan animasi */
+    .cloud2::before { width: 100px; height: 100px; top: -30px; left: 20px; }
+    .cloud2::after { width: 70px; height: 70px; top: -10px; left: 90px; }
     @keyframes moveClouds {
-      from { transform: translateX(-200px); }
-      to { transform: translateX(120vw); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120vw); }
     }
 
-    header {
-      padding: 50px 20px;
+    /* 🌸 Navbar */
+    nav {
+      background: #ff69b4; /* pink cerah */
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    header h1 {
-      font-size: 28px;
-      text-shadow: 3px 3px #d6009a;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 14px;
-      color: #ffe6f9;
-    }
-
-    main {
-      padding: 40px 20px;
-    }
-
-    .card {
-      background: #ff6fd3;
-      border: 3px solid #fff;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 500px;
-      border-radius: 12px;
-      box-shadow: 5px 5px #d6009a;
-    }
-
-    .card h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: #ff4bcf;
+    nav ul { list-style: none; padding: 0; margin: 0; }
+    nav ul li { display: inline; margin: 0 15px; }
+    nav ul li a {
+      text-decoration: none;
       color: white;
-      font-size: 12px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #ffe4f0; }
+
+    /* 🌸 Header */
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: #ffe6f1;
+      color: #ff2e88;
+      border-bottom: 4px solid #ff69b4;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+    header p { font-size: 1.2em; }
+
+    /* 🌸 Section */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #ff2e88;
+      margin-bottom: 20px;
+      font-size: 2em;
+      border-bottom: 2px dashed #ff69b4;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* 🌸 Tentang Saya */
+    #about { position: relative; }
+    #about img {
+      display: block;
+      margin: 20px auto;
+      width: 220px; height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 4px solid #ff69b4;
+      box-shadow: 0 6px 12px rgba(255, 105, 180, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1;
+      position: relative;
+    }
+    #about img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(255, 105, 180, 0.6);
+    }
+    #about::after {
+      content: "";
+      position: absolute;
+      top: 30px; left: 50%;
+      transform: translateX(-50%);
+      width: 220px; height: 220px;
+      background-image: 
+        linear-gradient(90deg, rgba(255,105,180,0.2) 50%, transparent 50%),
+        linear-gradient(rgba(255,105,180,0.2) 50%, transparent 50%);
+      background-size: 20px 20px;
+      border-radius: 12px;
+      z-index: 0;
+      pointer-events: none;
+    }
+    #about h2::after { content: " 🌸"; }
+
+    /* 🌸 Tabs Kompetensi */
+    .tabs {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .tab-link {
+      background: #ffe6f1;
+      border: 2px solid #ff69b4;
+      color: #ff2e88;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tab-link:hover {
+      background: #ff69b4;
+      color: white;
+    }
+    .tab-link.active {
+      background: #ff69b4;
+      color: white;
+    }
+    .tab-content {
+      display: none;
+      margin-top: 20px;
+    }
+    .tab-content.active { display: block; }
+    .tab-content h3 {
+      color: #ff2e88;
+      margin-bottom: 10px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .gallery img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(255, 105, 180, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(255, 105, 180, 0.6);
+    }
+
+    /* 🌸 Kontak */
+    #contact a {
+      color: #ff2e88;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    #contact a:hover { text-decoration: underline; }
+
+    /* 🌸 Footer */
+    footer {
+      background: #ff69b4;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      border-top: 3px solid #ff2e88;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Background pixel -->
-  <div class="pixel-bg"></div>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#kompetensi">Kompetensi</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
 
-  <!-- Awan -->
-  <div class="cloud" style="top: 60px; animation-delay: 0s;"></div>
-  <div class="cloud" style="top: 120px; animation-delay: 15s;"></div>
-  <div class="cloud" style="top: 200px; animation-delay: 30s;"></div>
-
-  <header>
-    <h1>🌸 Welcome to My Pixel World 🌸</h1>
-    <p>Tampilan pink cerah, pixel aesthetic, dan awan melayang~</p>
+  <!-- Header -->
+  <header data-aos="fade-down">
+    <h1>Keysha Nadya Mecca</h1>
+    <p>SMK Plus Pelita Nusantara | Teknik Komputer Jaringan</p>
   </header>
 
-  <main>
-    <div class="card">
-      <h2>✨ Tentang Website Ini</h2>
-      <p>
-        Website ini menggunakan efek pixel pink cerah dengan animasi awan
-        agar tampil lebih manis dan unik. Desain ini cocok untuk portfolio,
-        personal web, atau project kreatif lainnya.
-      </p>
+  <!-- Tentang Saya -->
+  <section id="about" data-aos="fade-right">
+    <h2>Tentang Saya</h2>
+    <img src="foto.jpg" alt="Foto Keysha">
+    <p>
+      Halo! Saya <b>Keysha Nadya Mecca</b>, siswi SMK Plus Pelita Nusantara 
+      jurusan <b>Teknik Komputer Jaringan</b>.  
+      Saya memiliki minat dalam bidang jaringan komputer, teknologi, 
+      serta pembuatan website.
+    </p>
+  </section>
+
+  <!-- Kompetensi -->
+  <section id="kompetensi" data-aos="fade-up">
+    <h2>Kompetensi</h2>
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab(event, 'mikrotik')">Mikrotik</button>
+      <button class="tab-link" onclick="openTab(event, 'fiber')">Fiber Optik</button>
+      <button class="tab-link" onclick="openTab(event, 'elektronika')">Elektronika</button>
+      <button class="tab-link" onclick="openTab(event, 'server')">Server</button>
     </div>
 
-    <div class="card">
-      <h2>💖 Konten Utama</h2>
-      <p>
-        Kamu bisa menambahkan foto, teks, atau bahkan embed video di sini.
-        Semua bisa disesuaikan agar sesuai dengan tema pixel aesthetic.
-      </p>
+    <div id="mikrotik" class="tab-content active">
+      <h3>Konfigurasi Mikrotik</h3>
+      <p>Pengalaman konfigurasi router Mikrotik, setup hotspot, VLAN, firewall, dan manajemen bandwidth.</p>
+      <div class="gallery">
+        <img src="mikrotik1.jpg" alt="Mikrotik 1">
+        <img src="mikrotik2.jpg" alt="Mikrotik 2">
+        <img src="mikrotik3.jpg" alt="Mikrotik 3">
+      </div>
     </div>
-  </main>
 
-  <footer>
-    Dibuat dengan 💖 dan pixel art
+    <div id="fiber" class="tab-content">
+      <h3>Instalasi Fiber Optik</h3>
+      <p>Pengalaman splicing kabel fiber optik, pengukuran loss jaringan dengan OTDR, dan instalasi FTTH.</p>
+      <div class="gallery">
+        <img src="fiber1.jpg" alt="Fiber 1">
+        <img src="fiber2.jpg" alt="Fiber 2">
+      </div>
+    </div>
+
+    <div id="elektronika" class="tab-content">
+      <h3>Elektronika Dasar</h3>
+      <p>Memahami rangkaian sederhana, soldering, perawatan hardware, dan troubleshooting.</p>
+      <div class="gallery">
+        <img src="elektronika1.jpg" alt="Elektronika 1">
+      </div>
+    </div>
+
+    <div id="server" class="tab-content">
+      <h3>Manajemen Server</h3>
+      <p>Pengalaman instalasi server Linux & Windows, web server, dan manajemen user & jaringan.</p>
+      <div class="gallery">
+        <img src="server1.jpg" alt="Server 1">
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" data-aos="zoom-in">
+    <h2>Kontak</h2>
+    <p>Email: <a href="mailto:keyshanadyamecca85@gmail.com">keyshanadyamecca85@gmail.com</a></p>
+    <p>Nomor HP: <a href="https://wa.me/628986419663" target="_blank">0898-6419-663</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 Portofolio Keysha Nadya Mecca</p>
   </footer>
+
+  <!-- Awan -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    function openTab(evt, tabName) {
+      let contents = document.getElementsByClassName("tab-content");
+      for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+        contents[i].classList.remove("active");
+      }
+      let links = document.getElementsByClassName("tab-link");
+      for (let i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+      }
+      document.getElementById(tabName).style.display = "block";
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
 </body>
 </html>
