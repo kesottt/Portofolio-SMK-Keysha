@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Keysha - Pixel Theme</title>
+  <title>Portofolio Keysha Pixel</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Font pixel -->
   <link href="https://fonts.cdnfonts.com/css/press-start-2p" rel="stylesheet">
 </head>
 <body>
@@ -16,33 +15,36 @@
 
   <!-- Navbar -->
   <nav>
-    <a href="#home">Beranda</a>
-    <a href="#biodata">Biodata</a>
-    <a href="#pengalaman">Pengalaman</a>
-    <a href="#kontak">Kontak</a>
+    <ul>
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#biodata">Biodata</a></li>
+      <li><a href="#pengalaman">Pengalaman</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
   </nav>
 
   <!-- Halaman 1 -->
-  <section id="home" class="page">
-    <div class="content">
-      <div class="photo">
-        <img src="foto-keysha.jpg" alt="Foto Keysha">
-      </div>
-      <div class="intro">
-        <h1>Keysha Nadya Mecca</h1>
-        <h2>Teknik Komputer Jaringan</h2>
-        <h3>SMK Plus Pelita Nusantara</h3>
-      </div>
+  <section id="home" class="page home">
+    <div class="left">
+      <img src="foto-keysha.jpg" alt="Foto Keysha">
+    </div>
+    <div class="right">
+      <h1>Keysha Nadya Mecca</h1>
+      <h2>Teknik Komputer Jaringan</h2>
+      <h3>SMK Plus Pelita Nusantara</h3>
+      <p>Halo! Selamat datang di portofolio pixel ala Mario saya.</p>
     </div>
   </section>
 
   <!-- Halaman 2 -->
   <section id="biodata" class="page">
     <h1>Biodata</h1>
-    <p><strong>Nama:</strong> Keysha Nadya Mecca</p>
-    <p><strong>Sekolah:</strong> SMK Plus Pelita Nusantara</p>
-    <p><strong>Jurusan:</strong> Teknik Komputer Jaringan</p>
-    <p><strong>Tentang Saya:</strong> Saya tertarik pada jaringan, IoT, RFID, server, dan desain web retro pixel ala Mario. Saya sedang belajar membuat project realtime dan dashboard interaktif.</p>
+    <div class="bio">
+      <p><strong>Nama:</strong> Keysha Nadya Mecca</p>
+      <p><strong>Sekolah:</strong> SMK Plus Pelita Nusantara</p>
+      <p><strong>Jurusan:</strong> Teknik Komputer Jaringan</p>
+      <p><strong>Tentang Saya:</strong> Saya tertarik pada jaringan, IoT, RFID, server, dan desain web retro pixel ala Mario.</p>
+    </div>
   </section>
 
   <!-- Halaman 3 -->
@@ -51,23 +53,23 @@
     <div class="grid">
       <div class="card">
         <img src="mikrotik.jpg" alt="Mikrotik">
-        <p>Mikrotik</p>
-        <span>(Routing, NAT, Firewall dasar)</span>
+        <h3>Mikrotik</h3>
+        <p>Routing, NAT, firewall dasar.</p>
       </div>
       <div class="card">
         <img src="fiber.jpg" alt="Fiber Optik">
-        <p>Fiber Optik</p>
-        <span>(Penyambungan & pengukuran loss)</span>
+        <h3>Fiber Optik</h3>
+        <p>Penyambungan & pengukuran loss.</p>
       </div>
       <div class="card">
         <img src="server.jpg" alt="Server">
-        <p>Server</p>
-        <span>(Instalasi layanan, virtualisasi)</span>
+        <h3>Server</h3>
+        <p>Instalasi layanan, virtualisasi ringan.</p>
       </div>
       <div class="card">
         <img src="elektro.jpg" alt="Elektro">
-        <p>Elektro</p>
-        <span>(Dasar kelistrikan & rangkaian sederhana)</span>
+        <h3>Elektro</h3>
+        <p>Dasar kelistrikan & rangkaian sederhana.</p>
       </div>
     </div>
   </section>
@@ -81,7 +83,7 @@
     <p><strong>LinkedIn:</strong> (tambahkan di sini)</p>
   </section>
 
-  <!-- Karakter Mario Berjalan -->
+  <!-- Mario -->
   <div class="mario"></div>
 
 </body>
