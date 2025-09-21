@@ -1,49 +1,177 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Retro Pixel</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio Keysha - Pixel Theme</title>
+
   <link rel="stylesheet" href="style.css">
-  <!-- Font pixel -->
-  <link href="https://fonts.cdnfonts.com/css/press-start-2p" rel="stylesheet">
+  <!-- Pixel font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Awan Mario -->
-  <div class="cloud"></div>
-  <div class="cloud"></div>
-  <div class="cloud"></div>
+  <!-- Top navigation -->
+  <nav class="topnav">
+    <div class="logo">PORTOFOLIO KEYSHA</div>
+    <ul class="navlinks">
+      <li><a href="#home" data-target="home">Beranda</a></li>
+      <li><a href="#biodata" data-target="biodata">Biodata</a></li>
+      <li><a href="#pengalaman" data-target="pengalaman">Pengalaman</a></li>
+      <li><a href="#kontak" data-target="kontak">Kontak</a></li>
+    </ul>
+  </nav>
 
-  <!-- Header -->
-  <header>
-    <h1>Keysha Nadya Mecca</h1>
-    <p>Portofolio SMK - Tema Mario Retro Pixel</p>
-  </header>
+  <!-- Pixel background grid -->
+  <div class="pixel-grid"></div>
 
-  <!-- Konten utama -->
+  <!-- Clouds (pixel blocks) -->
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
+
+  <!-- Pixel character that walks -->
+  <div id="walker" class="walker">
+    <div class="person frame1"></div>
+  </div>
+
+  <!-- Sections (pages) -->
   <main>
-    <section class="card">
-      <h2>Tentang Saya</h2>
-      <p>Saya adalah siswi SMK dengan minat di bidang IT, Web Design, dan IoT. 
-      Portofolio ini dibuat dengan gaya retro pixel seperti game Mario.</p>
+    <!-- PAGE 1: HOME -->
+    <section id="home" class="page active">
+      <div class="container">
+        <div class="left-col">
+          <!-- Large profile photo: replace profile.jpg with your photo -->
+          <img src="profile.jpg" alt="Foto Keysha" class="profile-photo">
+        </div>
+        <div class="right-col">
+          <h1 class="name">Keysha Nadya Mecca</h1>
+          <h2 class="study">Teknik Komputer Jaringan</h2>
+          <h3 class="school">SMK Plus Pelita Nusantara</h3>
+          <p class="lead">Halo! Selamat datang di portofolio saya. Di sini saya menampilkan proyek, pengalaman, dan kontak saya.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Projek</h2>
-      <ul>
-        <li>IoT Top-Up Saldo dengan ESP32</li>
-        <li>Dashboard RFID Web Realtime</li>
-        <li>Desain Web Retro Pixel</li>
-      </ul>
+    <!-- PAGE 2: BIODATA -->
+    <section id="biodata" class="page">
+      <div class="content-card">
+        <h2>Biodata</h2>
+        <div class="biodata-grid">
+          <div><strong>Nama</strong><p>Keysha Nadya Mecca</p></div>
+          <div><strong>Sekolah</strong><p>SMK Plus Pelita Nusantara</p></div>
+          <div><strong>Jurusan</strong><p>Teknik Komputer Jaringan</p></div>
+          <div class="about"><strong>Tentang Saya</strong>
+            <p>Saya tertarik pada jaringan, IoT, dan desain web. Sedang belajar membuat project top-up RFID, web realtime, dan desain retro pixel.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Kontak</h2>
-      <p>Email: <a href="mailto:keysha@example.com">keysha@example.com</a></p>
+    <!-- PAGE 3: PENGALAMAN -->
+    <section id="pengalaman" class="page">
+      <div class="content-card">
+        <h2>Pengalaman Saya</h2>
+        <p class="muted">Di bawah adalah area untuk 4 kategori pengalaman. Kamu bisa mengganti foto tiap kartu dengan gambar sendiri.</p>
+
+        <div class="exp-grid">
+          <div class="exp-card">
+            <div class="exp-title">Mikrotik</div>
+            <div class="exp-photo"><img src="exp1.jpg" alt="Mikrotik (ganti dengan foto)"></div>
+            <div class="exp-desc">(Contoh teks sementara) Setup routing, NAT, firewall dasar.</div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-title">Fiber Optik</div>
+            <div class="exp-photo"><img src="exp2.jpg" alt="Fiber (ganti dengan foto)"></div>
+            <div class="exp-desc">(Contoh teks sementara) Pemahaman penyambungan & pengukuran loss.</div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-title">Server</div>
+            <div class="exp-photo"><img src="exp3.jpg" alt="Server (ganti dengan foto)"></div>
+            <div class="exp-desc">(Contoh teks sementara) Instalasi layanan, virtualisasi ringan.</div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-title">Elektro</div>
+            <div class="exp-photo placeholder">Ganti foto</div>
+            <div class="exp-desc">(Contoh teks sementara) Dasar kelistrikan & rangkaian sederhana.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: KONTAK -->
+    <section id="kontak" class="page">
+      <div class="content-card">
+        <h2>Kontak</h2>
+        <p class="muted">Silakan hubungi saya melalui:</p>
+        <ul class="contact-list">
+          <li><strong>Handphone:</strong> +62 8xx-xxxx-xxxx</li>
+          <li><strong>Instagram:</strong> <a href="https://instagram.com/username" target="_blank">@username</a></li>
+          <li><strong>Email:</strong> <a href="mailto:keysha@example.com">keysha@example.com</a></li>
+          <li><strong>LinkedIn / Lainnya:</strong> (tambahkan di sini)</li>
+        </ul>
+      </div>
     </section>
   </main>
 
-  <!-- Tanah Mario -->
-  <div class="ground"></div>
+  <script>
+    // navigation: show section based on clicked nav
+    document.querySelectorAll('.navlinks a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = a.dataset.target;
+        goToSection(target);
+      });
+    });
+
+    function goToSection(id) {
+      document.querySelectorAll('.page').forEach(s => s.classList.remove('active'));
+      const sec = document.getElementById(id);
+      if (sec) sec.classList.add('active');
+
+      // animate walker to start from left and walk across
+      startWalker();
+    }
+
+    // walker animation (simple: move across and stop near center)
+    const walker = document.getElementById('walker');
+    let walkingTimeout;
+    function startWalker() {
+      // reset
+      walker.style.transition = 'none';
+      walker.style.left = '-80px';
+      void walker.offsetWidth;
+      walker.style.transition = 'left 3.5s linear';
+      walker.style.left = 'calc(70% - 60px)'; // target position
+      // small sprite frame toggle for walking look
+      walker.classList.add('walking');
+      clearTimeout(walkingTimeout);
+      walkingTimeout = setTimeout(() => walker.classList.remove('walking'), 3700);
+    }
+
+    // on load, ensure home active and walker runs
+    window.addEventListener('load', () => {
+      goToSection('home');
+    });
+
+    // keyboard nav (optional)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        // go to next
+        const pages = Array.from(document.querySelectorAll('.page'));
+        const current = pages.findIndex(p => p.classList.contains('active'));
+        const next = pages[(current + 1) % pages.length];
+        goToSection(next.id);
+      }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        const pages = Array.from(document.querySelectorAll('.page'));
+        const current = pages.findIndex(p => p.classList.contains('active'));
+        const prev = pages[(current - 1 + pages.length) % pages.length];
+        goToSection(prev.id);
+      }
+    });
+  </script>
 </body>
 </html>
