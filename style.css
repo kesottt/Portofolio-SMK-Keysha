@@ -1,74 +1,61 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ========== PIXEL PORTFOLIO STYLE ========== */
 
-/* Body */
+/* reset */
+* { margin:0; padding:0; box-sizing: border-box; }
+html,body { height:100%; }
+
+/* base */
 body {
-  font-family: 'Press Start 2P', cursive;
-  background-color: #ffe6f2; /* pink cerah */
-  color: #222;
+  font-family: "Press Start 2P", cursive;
+  background: #87CEEB; /* dasar biru langit (pixel grid layered on top) */
+  color: #111;
   overflow-x: hidden;
-  text-align: center;
-  padding-bottom: 140px; /* ruang buat tanah */
+  min-height: 100vh;
 }
 
-/* Header */
-header {
-  padding: 50px 20px 20px;
+/* top nav */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: #ff4da6;
+  border-bottom: 4px solid #000;
+  z-index: 999;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 14px;
 }
-header h1 {
-  font-size: 24px;
-  color: #ff1493;
-  text-shadow: 3px 3px 0 #000;
-}
-header p {
-  margin-top: 10px;
-  font-size: 12px;
-}
-
-/* Card */
-.card {
-  background: #ff99cc;
-  border: 4px solid #000;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  text-align: left;
-  box-shadow: 6px 6px 0 #000;
-}
-.card h2 {
-  font-size: 14px;
-  margin-bottom: 15px;
-  color: #000;
-}
-.card p, .card li {
-  font-size: 10px;
-  line-height: 1.8;
-}
-.card ul {
-  list-style: square;
-  margin-left: 20px;
-}
-
-/* Link */
-a {
-  color: #000;
-  text-decoration: none;
-}
-a:hover {
+.topnav .logo {
   color: #fff;
-  background: #000;
-  padding: 2px 4px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.topnav .navlinks { list-style:none; display:flex; gap:10px; }
+.topnav .navlinks li a {
+  color:#fff; text-decoration:none; font-size:9px;
+  padding:8px 10px; border:2px solid transparent;
+}
+.topnav .navlinks li a:hover { background:#ff1a8c; border-color:#000; }
+
+/* pixel grid overlay (subtle) */
+.pixel-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Awan pixel Mario */
+/* clouds (pixel blocks) */
 .cloud {
   position: absolute;
-  top: 60px;
-  left: -150px;
+  left: -300px;
   width: 30px;
   height: 30px;
   background: #fff;
@@ -76,31 +63,164 @@ a:hover {
   box-shadow:
     30px 0 #fff, 60px 0 #fff, 90px 0 #fff,
     0 30px #fff, 30px 30px #fff, 60px 30px #fff, 90px 30px #fff;
-  animation: moveClouds 50s linear infinite;
-  z-index: 0;
+  z-index: 2;
+  animation: cloudMove linear infinite;
 }
-.cloud:nth-child(2) {
-  top: 140px;
-  animation-duration: 70s;
-}
-.cloud:nth-child(3) {
-  top: 220px;
-  animation-duration: 90s;
-}
-@keyframes moveClouds {
-  0% { transform: translateX(-200px); }
-  100% { transform: translateX(120vw); }
+/* positions & speeds */
+.cloud.c1 { top: 80px; animation-duration: 50s; left: -200px; }
+.cloud.c2 { top: 160px; animation-duration: 80s; left: -400px; transform: scale(1.2); }
+.cloud.c3 { top: 240px; animation-duration: 100s; left: -600px; transform: scale(0.9); }
+
+@keyframes cloudMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(140vw); }
 }
 
-/* Tanah Mario */
+/* pixel ground (stylized blocks) */
 .ground {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  left:0; bottom:0; right:0;
   height: 120px;
-  background-image: url("https://www.mariomayhem.com/downloads/sprites/super_mario_bros_tiles/SMB1-Ground.png");
-  background-repeat: repeat-x;
-  background-size: 50px 50px;
+  background: linear-gradient(#5fbf4a, #2e8b3b);
   z-index: 5;
+  box-shadow: inset 0 4px 0 rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+/* optional decorative repeating squares on ground */
+.ground::before {
+  content: "";
+  position:absolute; left:0; right:0; bottom:0; top:12px;
+  background-image: linear-gradient(90deg, rgba(0,0,0,0.12) 1px, transparent 1px),
+                    linear-gradient(rgba(0,0,0,0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity:0.65;
+}
+
+/* page sections full-screen */
+main { position:relative; z-index:3; }
+.page {
+  min-height: calc(100vh - 64px);
+  padding-top: 84px; /* below nav */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.page.active { display:flex; }
+
+/* container used on home */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display:flex;
+  gap: 30px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* left photo large */
+.left-col { flex: 0 0 360px; display:flex; align-items:center; justify-content:center; }
+.profile-photo {
+  width: 320px; height:320px; object-fit:cover;
+  border:6px solid #000; box-shadow:6px 6px 0 #ff99cc;
+  image-rendering: pixelated; /* make photo look pixel if low-res */
+  background:#fff;
+}
+
+/* right column texts */
+.right-col { flex:1; text-align:left; padding:20px; }
+.name { font-size:28px; color:#ff1493; text-shadow: 3px 3px #000; margin-bottom:12px; }
+.study { font-size:12px; margin-bottom:6px; color:#111; }
+.school { font-size:11px; margin-bottom:14px; color:#111; }
+.lead { font-size:10px; color:#111; }
+
+/* content card (for biodata, pengalaman, kontak) */
+.content-card {
+  width: 92%;
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.95);
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #ff99cc;
+  padding: 24px;
+  text-align:left;
+}
+.content-card h2 { font-size:16px; margin-bottom:12px; color:#111; }
+.muted { font-size:10px; margin-bottom:8px; color:#222; }
+
+/* biodata grid */
+.biodata-grid {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:12px;
+  font-size:10px;
+}
+.biodata-grid .about { grid-column: 1 / -1; }
+
+/* pengalaman grid */
+.exp-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:12px;
+}
+.exp-card {
+  border: 3px solid #000;
+  padding:8px;
+  background:#fff;
+  text-align:center;
+  font-size:10px;
+  image-rendering: pixelated;
+}
+.exp-title { font-weight:bold; margin-bottom:8px; }
+.exp-photo img { width:100%; height:140px; object-fit:cover; display:block; border:3px solid #000; image-rendering: pixelated; }
+.exp-photo.placeholder { display:flex; align-items:center; justify-content:center; height:140px; background:#eee; border:3px dashed #999; color:#666; }
+
+/* contact list */
+.contact-list { list-style:none; font-size:11px; margin-top:8px; }
+.contact-list li { margin-bottom:8px; }
+
+/* walker (pixel character) */
+.walker {
+  position: fixed;
+  bottom: 120px; /* above ground */
+  left: -80px;
+  width: 48px;
+  height: 48px;
+  z-index: 10;
+  transition: left 3.5s linear;
+  pointer-events: none;
+}
+/* pixel-person constructed with CSS box-shadow blocks */
+.person {
+  width: 10px; height: 10px;
+  margin: 8px;
+  background: #ff1493;
+  border: 2px solid #000;
+  image-rendering: pixelated;
+  box-shadow:
+    /* row 1 */ 10px 0 #ff1493,20px 0 #000,30px 0 #000,
+    /* row 2 */ 0px 10px #ff1493,10px 10px #fff,20px 10px #fff,30px 10px #000,
+    /* row 3 */ 0px 20px #ff1493,10px 20px #ff1493,20px 20px #000,30px 20px #000,
+    /* row 4 legs */ 10px 30px #000,20px 30px #ff1493;
+  transition: transform 0.2s;
+}
+
+/* walking animation look: small leg bob */
+.walker.walking .person { transform: translateY(0); }
+.walker.walking .person { animation: bob 0.25s steps(1, end) infinite; }
+@keyframes bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px) translateX(1px); }
+  100% { transform: translateY(0); }
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .container { flex-direction: column; padding: 24px 12px; }
+  .left-col { flex-basis: auto; }
+  .profile-photo { width: 220px; height:220px; }
+  .topnav { height:56px; padding: 0 8px; }
+  .name { font-size:20px; }
+  .content-card { padding:16px; }
 }
