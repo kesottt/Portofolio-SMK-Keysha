@@ -5,86 +5,91 @@
   box-sizing: border-box;
 }
 
+/* Body */
 body {
-  font-family: "Press Start 2P", cursive;
-  background: linear-gradient(to bottom, #87CEEB 70%, #6ab04c 100%); /* langit → rumput */
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #ffe6f2; /* pink cerah */
+  color: #222;
   overflow-x: hidden;
-  min-height: 100vh;
-  position: relative;
+  text-align: center;
+  padding-bottom: 140px; /* ruang buat tanah */
 }
 
-/* Navbar */
+/* Header */
 header {
-  background: #ff4da6;
-  padding: 10px;
-  text-align: center;
+  padding: 50px 20px 20px;
+}
+header h1 {
+  font-size: 24px;
+  color: #ff1493;
+  text-shadow: 3px 3px 0 #000;
+}
+header p {
+  margin-top: 10px;
   font-size: 12px;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  border-bottom: 4px solid #333;
-  color: white;
-  text-transform: uppercase;
 }
 
 /* Card */
 .card {
-  background: #fff;
+  background: #ff99cc;
+  border: 4px solid #000;
   padding: 20px;
-  margin: 30px auto;
+  margin: 20px auto;
   max-width: 600px;
-  border: 4px solid #333;
-  box-shadow: 6px 6px 0px #ff99cc;
-  border-radius: 0;
-  text-align: center;
-  transition: transform 0.2s;
+  text-align: left;
+  box-shadow: 6px 6px 0 #000;
 }
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 8px 8px 0px #ff66b2;
+.card h2 {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #000;
 }
-
-/* Tombol pixel */
-button {
-  background: #ff4da6;
-  border: 4px solid #333;
-  padding: 10px 20px;
+.card p, .card li {
   font-size: 10px;
+  line-height: 1.8;
+}
+.card ul {
+  list-style: square;
+  margin-left: 20px;
+}
+
+/* Link */
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
   color: #fff;
-  cursor: pointer;
-  box-shadow: 4px 4px 0px #333;
-  transition: all 0.1s;
-  margin-top: 10px;
+  background: #000;
+  padding: 2px 4px;
 }
 
-button:hover {
-  background: #ff1a8c;
-  box-shadow: 2px 2px 0px #333;
-  transform: translate(2px, 2px);
-}
-
-/* Awan Mario */
+/* Awan pixel Mario */
 .cloud {
   position: absolute;
-  top: 50px;
-  width: 80px;
-  height: 60px;
+  top: 60px;
+  left: -150px;
+  width: 30px;
+  height: 30px;
   background: #fff;
-  border: 3px solid #333;
-  border-radius: 10px;
-  box-shadow: 20px 0 #fff, 40px 0 #fff;
-  animation: moveClouds 60s linear infinite;
-  z-index: 1;
+  border: 3px solid #000;
+  box-shadow:
+    30px 0 #fff, 60px 0 #fff, 90px 0 #fff,
+    0 30px #fff, 30px 30px #fff, 60px 30px #fff, 90px 30px #fff;
+  animation: moveClouds 50s linear infinite;
+  z-index: 0;
 }
-.cloud:nth-child(2) { top: 120px; left: 40%; animation-duration: 80s; }
-.cloud:nth-child(3) { top: 200px; left: 70%; animation-duration: 100s; }
-
+.cloud:nth-child(2) {
+  top: 140px;
+  animation-duration: 70s;
+}
+.cloud:nth-child(3) {
+  top: 220px;
+  animation-duration: 90s;
+}
 @keyframes moveClouds {
-  from { transform: translateX(-150%); }
-  to { transform: translateX(150%); }
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(120vw); }
 }
 
 /* Tanah Mario */
@@ -94,8 +99,8 @@ button:hover {
   left: 0;
   width: 100%;
   height: 120px;
-  background-image: url('https://i.imgur.com/N5uCbDu.png');
+  background-image: url("https://www.mariomayhem.com/downloads/sprites/super_mario_bros_tiles/SMB1-Ground.png");
   background-repeat: repeat-x;
-  background-size: 60px 60px;
+  background-size: 50px 50px;
   z-index: 5;
 }
